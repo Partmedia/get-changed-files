@@ -107,7 +107,8 @@ async function run(): Promise<void> {
       if (format === 'space-delimited' && filename.includes(' ')) {
         core.setFailed(
           `One of your files includes a space. Consider using a different output format or removing spaces from your filenames. ` +
-            "Please submit an issue on this action's GitHub repo."
+            "Please submit an issue on this action's GitHub repo." +
+            "Problematic file: " + filename
         )
       }
       all.push(filename)
